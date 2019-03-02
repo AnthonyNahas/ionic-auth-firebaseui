@@ -1,0 +1,100 @@
+<ion-segment>
+  <ion-segment-button checked="true" (ionSelect)="view = 'signin'">
+    <ion-label>Sign In</ion-label>
+  </ion-segment-button>
+  <ion-segment-button checked="false" (ionSelect)="view = 'signup'">
+    <ion-label>Register</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+
+<div [ngSwitch]="view">
+  <!--<ion-router-outlet></ion-router-outlet>-->
+  <!--<ion-card *ngSwitchCase="'signin'">-->
+  <ion-card *ngSwitchDefault>
+    <ion-card-header>
+      <ion-card-title>Signing in</ion-card-title>
+      <!--<ion-card-subtitle>Card Subtitle</ion-card-subtitle>-->
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <!-- Inputs with labels -->
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input clearInput>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">
+          Password
+        </ion-label>
+        <ion-input clearInput type="password"></ion-input>
+      </ion-item>
+
+      <ion-button margin-vertical expand="full" shape="round" text-uppercase>
+        Log in
+      </ion-button>
+
+      <ion-button margin-vertical expand="full" shape="round" size="small" fill="outline" text-uppercase>
+        Forgot Password ?
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngSwitchCase="'signup'">
+    <ion-card-header>
+      <ion-card-title>Register</ion-card-title>
+      <!--<ion-card-subtitle>Card Subtitle</ion-card-subtitle>-->
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input clearInput>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input clearInput>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input clearInput type="password"></ion-input>
+      </ion-item>
+
+      <ion-button margin-vertical expand="full" shape="round" text-uppercase>
+        Register
+      </ion-button>
+
+      <ion-button margin-vertical expand="full" shape="round" size="small" fill="outline" text-uppercase>
+        <ion-icon padding-end name="finger-print"></ion-icon>
+        Continue as guest
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+<div margin>
+  <!--<ion-grid>-->
+  <!--<ion-row>-->
+  <ion-button margin-vertical expand="full" shape="round" color="google">Google</ion-button>
+  <ion-button margin-vertical expand="full" shape="round" color="facebook">Facebook</ion-button>
+  <ion-button margin-vertical expand="full" shape="round" color="twitter">Twitter</ion-button>
+  <ion-button margin-vertical expand="full" shape="round" color="dark">Github</ion-button>
+  <ion-button margin-vertical expand="full" shape="round" color="phone">Phone</ion-button>
+  <!--</ion-row>-->
+  <!--</ion-grid>-->
+</div>
+
+
+
