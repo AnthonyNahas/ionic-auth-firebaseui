@@ -1,5 +1,6 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/AnthonyNahas/ionic-auth-firebaseui/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;"
+   src="https://cdn.jsdelivr.net/gh/anthonynahas/ionic-auth-firebaseui@master/assets/logo.svg">
 </p>
 
 # ionic-auth-firebaseui - Ionic UI component for firebase authentication powered by @firebase, @angular and @angular/fire
