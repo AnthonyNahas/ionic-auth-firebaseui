@@ -1,0 +1,116 @@
+version: 2
+
+job_defaults: &job_defaults
+  docker:
+    - image: circleci/node:10-browsers
+      environment:
+        CHROME_BIN: '/usr/bin/google-chrome'
+  working_directory: ~/project/repo
+
+#package
+cache_key: &cache_key ionic-auth-firebaseui-deps-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+dist_key: &dist_key ionic-auth-firebaseui-dist-{{ .Revision }}
+
+jobs:
+  install:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: install-dependencies
+          command: npm ci
+      - save_cache:
+          key: *cache_key
+          paths:
+            - node_modules
+
+  lint:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: lint
+          command: npm run lint
+
+  test-lib:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
+      - run:
+          name: test
+          command: npm run test:ci
+
+  build-lib:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: build-lib
+          command: npm run build
+      - save_cache:
+          key: *dist_key
+          paths:
+            - dist
+
+  release:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
+      - run:
+          name: release
+          command: npm run semantic-release || true
+
+  deploy-lib:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
+      - run:
+          name: deploy-lib
+          command: gulp release
+
+workflows:
+  version: 2
+  build-test-release:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test-lib:
+          requires:
+            - install
+      - build-lib:
+          requires:
+            - install-functions
+            - lint
+            - test-lib
+#      - release:
+#          requires:
+#            - build-lib
+#          filters:
+#            branches:
+#              only: master
+#      - deploy-lib:
+#          requires:
+#            - release
+#          filters:
+#            branches:
+#              only: master

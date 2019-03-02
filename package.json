@@ -35,6 +35,7 @@
   "scripts": {
     "start": "gulp build",
     "test": " gulp test",
+    "test:ci": " gulp test:ci",
     "demo": " gulp build:demo",
     "check-travis": " travis-status --repo=AnthonyNahas/ionic-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
