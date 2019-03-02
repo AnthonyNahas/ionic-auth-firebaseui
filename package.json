@@ -42,9 +42,9 @@
     "@angular/common": "^7.2.7",
     "@angular/core": "^7.2.7",
     "@angular/fire": "^5.1.1",
+    "@angular/forms": "latest",
     "@ionic/angular": "^4.0.2",
-    "firebase": "^5.8.4",
-    "@angular/forms": "latest"
+    "firebase": "^5.8.4"
   },
   "devDependencies": {
     "@angular/animations": "^7.2.7",
@@ -101,6 +101,7 @@
     "source-map-loader": "0.2.3",
     "to-string-loader": "1.1.5",
     "travis-status": "2.0.0",
+    "tsickle": "^0.34.3",
     "tslint": "5.7.0",
     "typescript": "3.2.4",
     "yargs": "11.0.0",

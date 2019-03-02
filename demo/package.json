@@ -7,9 +7,12 @@
     "ng": "ng",
     "start": "ionic serve",
     "build": "ionic build",
+    "build:doc": "cd ../ && gulp build:doc",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "npm run link",
+    "link": "npm link ionic-auth-firebaseui"
   },
   "private": true,
   "dependencies": {
