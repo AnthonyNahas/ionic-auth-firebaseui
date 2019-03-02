@@ -6,6 +6,75 @@ $phone: #02bd7e;
 
 ion-button {
   &.google {
-    --ion-color-base:  $facebook !important;
+    --ion-color-base: $facebook !important;
   }
 }
+
+:root {
+  /** ionic-auth-firebaseui **/
+  --ion-color-google: #db4437;
+  --ion-color-google-rgb: 56, 128, 255;
+  --ion-color-google-contrast: #ffffff;
+  --ion-color-google-contrast-rgb: 255, 255, 255;
+  --ion-color-google-shade: #c13c30;
+  --ion-color-google-tint: #df574b;
+
+  --ion-color-facebook: #385899;
+  --ion-color-facebook-rgb: 56, 88, 153;
+  --ion-color-facebook-contrast: #ffffff;
+  --ion-color-facebook-contrast-rgb: 255, 255, 255;
+  --ion-color-facebook-shade: #314d87;
+  --ion-color-facebook-tint: #4c69a3;
+
+  --ion-color-twitter: #1da1f2;
+  --ion-color-twitter-rgb: 29, 161, 242;
+  --ion-color-twitter-contrast: #000000;
+  --ion-color-twitter-contrast-rgb: 0, 0, 0;
+  --ion-color-twitter-shade: #1a8ed5;
+  --ion-color-twitter-tint: #34aaf3;
+
+  --ion-color-phone: #02bd7e;
+  --ion-color-phone-rgb: 2, 189, 126;
+  --ion-color-phone-contrast: #ffffff;
+  --ion-color-phone-contrast-rgb: 255, 255, 255;
+  --ion-color-phone-shade: #02a66f;
+  --ion-color-phone-tint: #1bc48b;
+}
+
+.ion-color-google {
+  --ion-color-base: var(--ion-color-google) !important;
+  --ion-color-base-rgb: var(--ion-color-google-rgb) !important;
+  --ion-color-contrast: var(--ion-color-google-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-google-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-google-shade) !important;
+  --ion-color-tint: var(--ion-color-google-tint) !important;
+}
+
+.ion-color-facebook {
+  --ion-color-base: var(--ion-color-facebook) !important;
+  --ion-color-base-rgb: var(--ion-color-facebook-rgb) !important;
+  --ion-color-contrast: var(--ion-color-facebook-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-facebook-shade) !important;
+  --ion-color-tint: var(--ion-color-facebook-tint) !important;
+}
+
+.ion-color-twitter {
+  --ion-color-base: var(--ion-color-twitter) !important;
+  --ion-color-base-rgb: var(--ion-color-twitter-rgb) !important;
+  --ion-color-contrast: var(--ion-color-twitter-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-twitter-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-twitter-shade) !important;
+  --ion-color-tint: var(--ion-color-twitter-tint) !important;
+}
+
+
+.ion-color-phone {
+  --ion-color-base: var(--ion-color-phone) !important;
+  --ion-color-base-rgb: var(--ion-color-phone-rgb) !important;
+  --ion-color-contrast: var(--ion-color-phone-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-phone-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-phone-shade) !important;
+  --ion-color-tint: var(--ion-color-phone-tint) !important;
+}
+
