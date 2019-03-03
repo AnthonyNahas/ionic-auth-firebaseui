@@ -33,10 +33,10 @@
   },
   "private": true,
   "scripts": {
-    "start": "gulp build",
     "lint": " gulp lint",
     "test": " gulp test",
     "test:ci": " gulp test:ci",
+    "build": "gulp build",
     "demo": " gulp build:demo",
     "check-travis": " travis-status --repo=AnthonyNahas/ionic-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
