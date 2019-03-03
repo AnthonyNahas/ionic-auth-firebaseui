@@ -96,11 +96,9 @@ workflows:
             - install
       - test-lib:
           requires:
-            - install
+            - lint
       - build-lib:
           requires:
-            - install-functions
-            - lint
             - test-lib
 #      - release:
 #          requires:
