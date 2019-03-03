@@ -48,6 +48,18 @@ jobs:
           name: test
           command: npm run test:ci
 
+  codecov-lib:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
+      - run:
+          name: codecov
+          command: npx codecov
+
   build-lib:
     <<: *job_defaults
     steps:
@@ -97,6 +109,9 @@ workflows:
       - test-lib:
           requires:
             - lint
+      - codecov-lib:
+          requires:
+            - test-lib
       - build-lib:
           requires:
             - test-lib
