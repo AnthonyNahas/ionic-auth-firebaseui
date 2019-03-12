@@ -359,6 +359,7 @@ gulp.task('rollup-bundle', (cb) => {
         // Angular dependencies
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
+        '@angular/forms': 'ng.forms',
 
         // Rxjs dependencies
         'rxjs/Subject': 'Rx',
@@ -386,7 +387,13 @@ gulp.task('rollup-bundle', (cb) => {
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
         'firebase': _.camelCase('firebase'.replace('/', '.')),
-        '@angular/fire': _.camelCase('@angular/fire'.replace('/', '.'))
+        '@firebase/app': _.camelCase('@firebase/app'.replace('/', '.')),
+        '@firebase/auth': _.camelCase('@firebase/auth'.replace('/', '.')),
+        '@angular/fire/firestore': _.camelCase('@angular/fire/firestore'.replace('/', '.')),
+        '@angular/fire/auth': _.camelCase('@angular/fire/auth'.replace('/', '.')),
+        '@ionic/angular': _.camelCase('@ionic/angular'.replace('/', '.')),
+        '@angular/fire': _.camelCase('@angular/fire'.replace('/', '.')),
+        '@angular/router': _.camelCase('@angular/router'.replace('/', '.'))
 
       };
       const rollupBaseConfig = {
