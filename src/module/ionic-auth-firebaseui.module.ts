@@ -21,8 +21,8 @@ export const IonicAuthFirebaseUIConfigToken = new InjectionToken<IonicAuthFireba
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [AuthComponent],
-  declarations: [AuthComponent]
+  // exports: [AuthComponent],
+  // declarations: [AuthComponent]
 })
 export class IonicAuthFirebaseuiModule {
 
@@ -45,8 +45,8 @@ export class IonicAuthFirebaseuiModule {
             provide: IonicAuthFirebaseUIConfigToken,
             useValue: config
           },
-          AuthProcessService,
-          FirestoreSyncService,
+          // AuthProcessService,
+          // FirestoreSyncService,
           // LoggedInGuard
         ],
     };

@@ -13,8 +13,8 @@ import {IonicAuthFirebaseuiModule} from 'ionic-auth-firebaseui';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,
-    IonicModule.forRoot(),
+  imports: [
+    BrowserModule,
     AppRoutingModule,
     IonicAuthFirebaseuiModule.forRoot({
       apiKey: 'AIzaSyBRsM4pAafuJEKi1B1XDyELE9x6PceKfzE',
@@ -23,7 +23,9 @@ import {IonicAuthFirebaseuiModule} from 'ionic-auth-firebaseui';
       projectId: 'ionic-auth-firebaseui',
       storageBucket: 'ionic-auth-firebaseui.appspot.com',
       messagingSenderId: '286213096316'
-    })],
+    }),
+    IonicModule.forRoot(),
+  ],
   providers: [
     StatusBar,
     SplashScreen,
