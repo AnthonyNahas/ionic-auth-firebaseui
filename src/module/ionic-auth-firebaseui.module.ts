@@ -8,9 +8,13 @@ import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from
 import {AuthProcessService} from './services/auth-process.service';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthComponent} from './component/auth/auth.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 // Export module's public API
 export {AuthComponent} from './component/auth/auth.component';
+export {AuthProcessService} from './services/auth-process.service';
+export {FirestoreSyncService} from './services/firestore-sync.service';
 
 export const IonicAuthFirebaseUIConfigToken = new InjectionToken<IonicAuthFirebaseUIConfig>('IonicAuthFirebaseUIConfig');
 
@@ -20,9 +24,12 @@ export const IonicAuthFirebaseUIConfigToken = new InjectionToken<IonicAuthFireba
     IonicModule,
     FormsModule,
     ReactiveFormsModule,
+    // ANGULARFIRE2
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
-  // exports: [AuthComponent],
-  // declarations: [AuthComponent]
+  exports: [],
+  declarations: []
 })
 export class IonicAuthFirebaseuiModule {
 
@@ -45,8 +52,8 @@ export class IonicAuthFirebaseuiModule {
             provide: IonicAuthFirebaseUIConfigToken,
             useValue: config
           },
-          // AuthProcessService,
-          // FirestoreSyncService,
+          AuthProcessService,
+          FirestoreSyncService,
           // LoggedInGuard
         ],
     };

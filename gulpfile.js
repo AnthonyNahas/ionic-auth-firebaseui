@@ -268,7 +268,10 @@ gulp.task('compile', (cb) => {
 
 // Build the 'dist' folder (without publishing it to NPM)
 gulp.task('build', ['clean'], (cb) => {
-  runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
+  runSequence('compile',
+    // 'test',
+    'npm-package',
+    'rollup-bundle', cb);
 });
 
 gulp.task('build:schematics', () => {

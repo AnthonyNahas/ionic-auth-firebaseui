@@ -72,7 +72,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @returns
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
-    // console.log('this.config on signInWith', this.config);
+    console.log('this.config on signInWith', this.config);
     try {
       this.isLoading = true;
       let signInResult: UserCredential | any;

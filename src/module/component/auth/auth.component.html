@@ -74,7 +74,14 @@
         Register
       </ion-button>
 
-      <ion-button margin-vertical expand="full" shape="round" size="small" fill="outline" text-uppercase>
+      <ion-button *ngIf="guestEnabled"
+                  margin-vertical
+                  expand="full"
+                  shape="round"
+                  size="small"
+                  fill="outline"
+                  text-uppercase
+                  (click)="signUpAnonymously()">
         <ion-icon padding-end name="finger-print"></ion-icon>
         Continue as guest
       </ion-button>
