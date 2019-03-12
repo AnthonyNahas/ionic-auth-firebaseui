@@ -12,6 +12,7 @@
     "url": "git://github.com/AnthonyNahas/ionic-auth-firebaseui.git"
   },
   "license": "MIT",
+  "schematics": "./schematics/collection.json",
   "keywords": [
     "angular",
     "ionic",
@@ -49,6 +50,7 @@
     "firebase": "^5.8.6"
   },
   "devDependencies": {
+    "@angular-devkit/schematics": "latest",
     "@angular/animations": "^7.2.8",
     "@angular/compiler": "^7.2.8",
     "@angular/compiler-cli": "^7.2.8",
@@ -56,7 +58,8 @@
     "@angular/platform-browser-dynamic": "^7.2.8",
     "@angular/platform-server": "^7.2.8",
     "@compodoc/gulp-compodoc": "0.0.8",
-    "@types/jest": "22.2.3",
+    "@types/jasmine": "^3.3.9",
+    "@types/jest": "^22.2.3",
     "@types/lodash": "4.14.92",
     "@types/node": "8.0.44",
     "angular-cli-ghpages": "0.5.2",
@@ -68,6 +71,7 @@
     "codelyzer": "4.2.1",
     "commitplease": "3.2.0",
     "conventional-github-releaser": "2.0.2",
+    "copy-webpack-plugin": "^5.0.1",
     "core-js": "2.5.5",
     "css-loader": "0.28.11",
     "cssnano": "3.10.0",
@@ -101,12 +105,16 @@
     "run-sequence": "2.2.1",
     "rxjs": "^6.4.0",
     "sass-loader": "7.0.1",
+    "schematics-utilities": "latest",
     "source-map-loader": "0.2.3",
     "to-string-loader": "1.1.5",
     "travis-status": "2.0.0",
     "tsickle": "^0.34.3",
     "tslint": "5.7.0",
     "typescript": "3.2.4",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2",
     "yargs": "11.0.0",
     "zone.js": "0.8.26"
   },
